@@ -1,6 +1,6 @@
 services:
-  app:
+  scheduler:
     build: .
     ports:
       - "5000:5000"
-    container_name: app
+    container_name: scheduler
