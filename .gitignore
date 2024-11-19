@@ -1,0 +1,52 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*$pyc
+
+# Virtual environment directory
+venv/
+.env/
+.venv/
+
+# Pipenv files
+*.lock
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+
+# Testing
+.coverage
+.tox/
+nosetests.xml
+pytest_cache/
+.cache/
+
+# Editor and IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*.sublime-workspace
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Environment variable files
+.env
+.env.*
+
+# Logs
+*.log
+
+# MacOS Finder files
+.DS_Store
+
+# Windows Thumbs.db
+Thumbs.db
+
+# Python-relevant tools
+.mypy_cache/
+.pytest_cache/
