@@ -151,13 +151,11 @@ class ScheduleCSP:
             solutions.append(assignment.copy())
             return len(solutions) < num_solutions
 
-        
         unassigned = [e for e in self.event_list if e not in assignment]
         first = unassigned[0]
 
         event_duration = self.events[first]
 
-        
         for date, start_time in self.time_slots:
             if start_time + event_duration <= max(t[1] for t in self.time_slots) and all((date, time) not in assignment.values() for time in range(start_time, start_time + event_duration)):
                 
@@ -171,7 +169,6 @@ class ScheduleCSP:
                 del assignment[first]
 
         return True
-
 
 if __name__ == "__main__":
     time_slots = TimeSlot(start_date="2024-11-26", end_date="2024-11-30", start_hour=9, end_hour=18)
@@ -187,11 +184,9 @@ if __name__ == "__main__":
 
     csp = ScheduleCSP(time_slots.generate_time_slots(), events)
 
-    # event Start/End Time
     csp.add_event_after_constraint("Meeting1", "2024-11-20")
     csp.add_event_before_constraint("Meeting2", "2024-11-29")
 
-    # order Constraint
     csp.add_event_order_constraint("Meeting1", "Meeting2", before=False)
 
     solutions = csp.find_solutions(3)

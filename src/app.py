@@ -1,9 +1,8 @@
 from flask import Flask
-from routes import configure_routes  # Import the function to configure routes
+from routes import configure_routes
 
 app = Flask(__name__)
 
-# Configure routes by passing the app instance
 configure_routes(app)
 
 if __name__ == "__main__":
