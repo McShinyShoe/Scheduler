@@ -4,6 +4,7 @@ from schedule_csp import ScheduleCSP
 from datetime import datetime
 import itertools
 
+# Controllers for home page
 def index():
     result = None
     if request.method == "POST":

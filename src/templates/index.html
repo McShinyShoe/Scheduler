@@ -149,6 +149,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
+        // Given a time, add the correseponding hour to it
         function addHoursToTime(time, hoursToAdd) {
             const [hours, minutes] = time.split(':').map(Number);
             const date = new Date();
@@ -159,6 +160,8 @@
             const newMinutes = date.getMinutes().toString().padStart(2, '0');
             return `${newHours}:${newMinutes}`;
         }
+
+        // Caalculate the differance beteween two dates
         function calculateDateDifference(date1, date2) {
             const firstDate = new Date(date1);
             const secondDate = new Date(date2);
@@ -169,10 +172,14 @@
 
             return differenceInDays;
         }
+
+        // get an id elemeent given a data map and a key
         function getIdByKey(data, key) {
             const item = data.find(entry => entry.title === key);
             return item ? item.id : null;
         }
+
+        // Function to convert HSL color format to RGB color format encoded in hexadecimals
         function hslToRgb(h, s, l) {
             let r, g, b;
 
@@ -202,6 +209,8 @@
 
             return `#${((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1)}`;
         }
+
+        // Seperate camelCase into seperate wors ("thisIscamelCase" => "This Iss Camel Case")
         function camelCaseToWords(input) {
             return input
                 .replace(/([a-z])([A-Z])/g, '$1 $2')
@@ -210,6 +219,7 @@
                 .join(' ');
         }
 
+        // Event listener when document loaded
         document.addEventListener('DOMContentLoaded', (event) => {
             const startTimeInput = document.getElementById('startTime');
             const endTimeInput = document.getElementById('endTime');
@@ -237,6 +247,7 @@
             });
         });
 
+        // Event Trigger when document is ready
         $(document).ready(function () {
             const currentDate = new Date();
 
